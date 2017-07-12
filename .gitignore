@@ -1,6 +1,7 @@
 # Specific to project
 tensorflow_summaries/
 textminer/__pycache__/
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
