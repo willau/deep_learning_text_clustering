@@ -5,7 +5,7 @@
 .ipynb_checkpoints/
 tensorflow_summaries/
 textminer/__pycache__/
-embeddings/
+embeddings/fasttext.wiki.en.vec
 .DS_Store
 
 
