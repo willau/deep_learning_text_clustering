@@ -1,7 +1,13 @@
-# Specific to project
+# Files and folders to ignore specific to project
+.idea/
+.ipython/
+.matplotlib/
+.ipynb_checkpoints/
 tensorflow_summaries/
 textminer/__pycache__/
+embeddings/
 .DS_Store
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
