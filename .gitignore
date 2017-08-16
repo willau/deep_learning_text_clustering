@@ -4,6 +4,7 @@
 .matplotlib/
 .ipynb_checkpoints/
 tensorflow_summaries/
+!tensorflow_summaries/.gitkeep
 textminer/__pycache__/
 embeddings/fasttext.wiki.en.vec
 .DS_Store
