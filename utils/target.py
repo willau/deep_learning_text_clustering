@@ -28,18 +28,18 @@ def heat_kernel_matrix(aff):
 
 def laplacian_eigenmaps(lsa_features, n_neighbors=15, subdim=15, n_jobs=1):
 
-    print("Fitting nearest neighbors...")
+    print("Fitting nearest neighbors")
     nn = NearestNeighbors(n_neighbors=n_neighbors, n_jobs=n_jobs)
     nn.fit(lsa_features)
     graph = nn.kneighbors_graph(mode="distance").toarray()
 
-    print("Creation of affinity matrix...")
+    print("Creation of affinity matrix")
     aff = affinity_matrix(graph)
 
-    print("Creation of heat kernel affinity matrix...")
+    print("Creation of heat kernel affinity matrix")
     heat = heat_kernel_matrix(aff)
 
-    print("spectral embedding")
-    spec_emb = SpectralEmbedding(n_components=subdim, affinity="precomputed")
+    print("Spectral embedding")
+    spec_emb = SpectralEmbedding(n_components=subdim, affinity="precomputed", n_jobs=n_jobs)
     eigenvectors = spec_emb.fit_transform(heat)
     return eigenvectors
