@@ -22,15 +22,24 @@ def map_label(true_labels, pred_labels):
     return pred_labels_mapped
 
 
-def cluster_quality(true_labels, pred_labels):
+def cluster_quality(true_labels, pred_labels, show=True):
     h, c, v = metrics.homogeneity_completeness_v_measure(true_labels, pred_labels)
     nmi = metrics.normalized_mutual_info_score(true_labels, pred_labels)
     rand = metrics.adjusted_rand_score(true_labels, pred_labels)
-    print("Homogeneity: %0.3f" % h)
-    print("Completeness: %0.3f" % c)
-    print("V-measure: %0.3f" % v)
-    print("NMI: %0.3f" % nmi)
-    print("Rand: %0.3f" % rand)
     pred_labels_mapped = map_label(true_labels, pred_labels)
     acc = metrics.accuracy_score(true_labels, pred_labels_mapped)
-    print("Acc: %0.3f" % acc)
+    if show:
+        print("Homogeneity: %0.3f" % h)
+        print("Completeness: %0.3f" % c)
+        print("V-measure: %0.3f" % v)
+        print("NMI: %0.3f" % nmi)
+        print("Rand score: %0.3f" % rand)
+        print("Accuracy: %0.3f" % acc)
+    return dict(
+        homogeneity=h,
+        completeness=c,
+        vmeasure=v,
+        nmi=nmi,
+        rand=rand,
+        accuracy=acc,
+    )
