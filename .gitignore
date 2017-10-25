@@ -7,6 +7,8 @@ tensorflow_summaries/
 !tensorflow_summaries/.gitkeep
 textminer/__pycache__/
 embeddings/fasttext.wiki.en.vec
+embeddings/wiki.en.vec
+embeddings/wiki.en.vec.crdownload
 .DS_Store
 
 
