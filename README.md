@@ -11,3 +11,5 @@ making training and inference faster than sequential architecture such as RNN.
 This work is based on:
 - Self-taught Convolutional Neural Networks for Short Text Clustering (2016)
 - Natural Language Processing (Almost) from Scratch (2011)
+
+Main code is organized in package ./utils.
